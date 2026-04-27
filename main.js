@@ -50,9 +50,16 @@ async function tts(text, lang, options = {}) {
     responseType: 3,
   });
   if (res.ok) {
-    let result = res.data;
-    if (result) {
-      return result;
+    let result = res.data.choices[0].message;
+    if (result.audio && result.audio.data) {
+      let base64 = result.audio.data;
+      let data = CryptoJS.enc.Base64.parse(base64);
+      let bytes = [];
+      for (let i = 0; i < data.sigBytes; i++) {
+        let byte = (data.words[i >>> 2] >>> (24 - (i % 4) * 8)) & 0xff;
+        bytes.push(byte);
+      }
+      return bytes;
     } else {
       throw JSON.stringify(result);
     }
