@@ -51,8 +51,8 @@ async function tts(text, lang, options = {}) {
   });
   if (res.ok) {
     let result = res.data;
-    if (result["audio"]) {
-      return result["audio"];
+    if (result) {
+      return result;
     } else {
       throw JSON.stringify(result);
     }
