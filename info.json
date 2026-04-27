@@ -1,10 +1,47 @@
 {
-  "id": "plugin.com.pot-app.lingva_tts",
+  "id": "plugin.com.pot-app.mimo_tts",
   "plugin_type": "tts",
-  "icon": "lingva.svg",
-  "display": "Lingva",
-  "homepage": "https://github.com/pot-app/pot-app-tts-plugin-template",
-  "needs": [{ "key": "requestPath", "display": "请求地址" }],
+  "icon": "mimo.svg",
+  "display": "Mimo",
+  "homepage": "https://github.com/wyf1992/pot-app-tts-plugin-mimo_tts",
+  "needs": [
+    {
+      "key": "requestPath",
+      "display": "请求地址",
+      "type": "input"
+    },
+    {
+      "key": "apiKey",
+      "display": "API Key",
+      "type": "input"
+    },
+    {
+      "key": "model",
+      "display": "模型",
+      "type": "input"
+    },
+    {
+      "key": "voice",
+      "display": "声音",
+      "type": "select",
+      "options": {
+        "mimo_default": "mimo_default",
+        "冰糖": "冰糖",
+        "茉莉": "茉莉",
+        "苏打": "苏打",
+        "白桦": "白桦",
+        "Mia": "Mia",
+        "Chloe": "Chloe",
+        "Milo": "Milo",
+        "Dean": "Dean"
+      }
+    },
+    {
+      "key": "voiceStyle",
+      "display": "语音风格",
+      "type": "input"
+    }
+  ],
   "language": {
     "zh_cn": "zh",
     "zh_tw": "zh_HANT",
